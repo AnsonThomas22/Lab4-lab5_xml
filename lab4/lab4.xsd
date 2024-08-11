@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com/schema" xmlns:other="http://www.other.com/schema" elementFormDefault="qualified">
 
   
     <xs:element name="Hospital" type="HospitalType"></xs:element>
@@ -50,7 +50,7 @@
     <xs:complexType name="MedicalRecordsType">
         <xs:sequence>
             <xs:element name="PatientID" type="xs:IDREF"></xs:element>
-            <xs:element name="DoctorID" type="xs:IDREF"></xs:element>
+            <xs:element name="DoctorID" type="xs:string"></xs:element>
             <xs:element name="Diagnosis" type="xs:string"></xs:element>
             <xs:element name="Treatment" type="xs:string"></xs:element>
             <xs:element name="LastVisit" type="xs:date"></xs:element>
@@ -75,7 +75,7 @@
     <xs:complexType name="AppointmentType">
         <xs:sequence>
             <xs:element name="PatientID" type="xs:IDREF"></xs:element>
-            <xs:element name="DoctorID" type="xs:IDREF"></xs:element>
+            <xs:element name="DoctorID" type="xs:string"></xs:element>
             <xs:element name="AppointmentDate" type="xs:dateTime"></xs:element>
             <xs:element name="Purpose" type="xs:string"></xs:element>
             <xs:element name="Location" type="xs:string"></xs:element>

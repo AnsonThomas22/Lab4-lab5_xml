@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Hospital SYSTEM "lab4.dtd">
-<Hospital>
-    <Patient Patient_ID="12">
+<?xml-model href="lab4.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<Hospital xmlns="http://www.example.com/schema" xmlns:other="http://www.other.com/schema">
+    <Patient Patient_ID="A12">
         <Name>
             <First_Name>Anson</First_Name>
             <Last_Name>Thomas</Last_Name>
@@ -14,8 +16,8 @@
         <Allergies>None</Allergies>
     </Patient>
 
-    <MedicalRecords RecordID="1001">
-        <PatientID>12</PatientID>
+    <MedicalRecords RecordID="A1001">
+        <PatientID>A12</PatientID>
         <DoctorID>101</DoctorID>
         <Diagnosis>Coronary Artery Disease</Diagnosis>
         <Treatment>Bypass Surgery</Treatment>
@@ -23,7 +25,7 @@
         <Medications>Aspirin, Beta-blockers</Medications>
     </MedicalRecords>
 
-    <Nurse NurseID="301">
+    <Nurse NurseID="A301">
         <Name>
             <FirstName>Jane</FirstName>
             <LastName>Smith</LastName>
@@ -35,8 +37,8 @@
         <Certification>RN, BSN</Certification>
     </Nurse>
 
-    <Appointment AppointmentID="4001">
-        <PatientID>12</PatientID>
+    <Appointment AppointmentID="A4001">
+        <PatientID>A12</PatientID>
         <DoctorID>101</DoctorID>
         <AppointmentDate>2024-08-05T10:00:00</AppointmentDate>
         <Purpose>Follow-up</Purpose>
@@ -45,7 +47,7 @@
         <FollowUpRequired>Yes</FollowUpRequired>
     </Appointment>
 
-    <Facility FacilityID="5001">
+    <Facility FacilityID="A5001">
         <Name>Main Hospital</Name>
         <Location>Main Street, Building 3</Location>
         <Capacity>200</Capacity>
@@ -54,8 +56,8 @@
         <OperatingRooms>10</OperatingRooms>
     </Facility>
 
-    <Billing BillID="6001">
-        <PatientID>12</PatientID>
+    <Billing BillID="A6001">
+        <PatientID>A12</PatientID>
         <Amount>50000.00</Amount>
         <PaymentStatus>Pending</PaymentStatus>
         <DateIssued>2024-08-06</DateIssued>
@@ -63,7 +65,7 @@
     </Billing>
 
 
-    <Feedback FeedbackID="8001">
+    <Feedback FeedbackID="A8001">
         <Feedrating>5</Feedrating>
         <Description>Good</Description>
     </Feedback>
