@@ -9,26 +9,44 @@
     <style>
         #map { height: 400px; }
         .d-none { display: none; }
+        footer {
+                        background-color: #004080; /* Dark blue background */
+                        color: white;
+                        text-align: center;
+                        padding: 10px;
+                        margin-top: 20px;
+                    }
+                    .navbar {
+                        background-color: #004080; /* Dark blue background */
+                    }
+                    .navbar a {
+                        color: white;
+                        text-decoration: none;
+                        padding: 8px 12px;
+                    }
+                    .navbar a:hover {
+                        color: #cce5ff; /* Light blue on hover */
+                    }
+}
     </style>
 </head>
 <body class="bg-gray-100">
 
-    <!-- Navbar -->
-    <nav class="bg-blue-500 p-4">
+    <nav class="navbar">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-white text-lg font-bold">
                 Claire Hospital
             </div>
             <ul class="flex space-x-4">
-                <li><a href="#" class="text-white hover:text-blue-300">Home</a></li>
-                <li><a href="#" class="text-white hover:text-blue-300">About</a></li>
+                <li><a href="lab4.xml" class="text-white hover:text-blue-300">Home</a></li>
+                <li><a href="map.html" class="text-white hover:text-blue-300">Location</a></li>
                 <li><a href="#" class="text-white hover:text-blue-300">Services</a></li>
                 <li><a href="#" class="text-white hover:text-blue-300">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Main Content -->
+   
     <div class="container mx-auto mt-8 p-4 bg-white rounded shadow">
         <h1 class="text-2xl font-bold mb-4 text-gray-800">Locate and Route to Hospital</h1>
         
@@ -51,7 +69,10 @@
             <li><strong>Speed:</strong> <span id="speed"></span></li>
         </ul>
     </div>
-    
+    <footer>
+        <p class="foot">&copy; 2024 Dogs and Cats Restaurant. All rights reserved</p>
+    </footer>
+
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
     <script>
@@ -68,27 +89,27 @@
                     document.getElementById("heading").innerText = pos.coords.heading;
                     document.getElementById("speed").innerText = pos.coords.speed;
 
-                    // Fixed location of the hospital
-                    const Lat = 12.9117;
-                    const Lng = 77.5878;
+                   
+                    const Lat = 12.9914123;
+                    const Lng = 77.6117329;
 
-                    // Display the map
+                    
                     var map = L.map('map').setView([pos.coords.latitude, pos.coords.longitude], 13);
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     }).addTo(map);
                     
-                    // Mark the user's location
+                    
                     L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map)
                         .bindPopup('You are here')
                         .openPopup();
 
-                    // Mark the hospital's location
+                    
                     L.marker([Lat, Lng]).addTo(map)
                         .bindPopup('Hospital')
                         .openPopup();
 
-                    // Add routing between the two locations
+                    
                     L.Routing.control({
                         waypoints: [
                             L.latLng(pos.coords.latitude, pos.coords.longitude),
@@ -120,6 +141,7 @@
         });
 
     </script>
+    
 
 </body>
 </html>

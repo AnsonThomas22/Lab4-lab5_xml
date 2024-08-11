@@ -10,12 +10,27 @@
             <Last_Name>Thomas</Last_Name>
         </Name>
         <PhoneNumber>123445556</PhoneNumber>
-        <Date_of_Birth>12/12</Date_of_Birth>
+        <Date_of_Birth>2003-12-12</Date_of_Birth>
         <Gender>Male</Gender>
         <Address> No.10, 5th cross</Address>
         <BloodGroup>O+</BloodGroup>
         <Allergies>None</Allergies>
     </Patient>
+
+
+    <Patient Patient_ID="A13">
+        <Name>
+            <First_Name>Rohan</First_Name>
+            <Last_Name>Gupta</Last_Name>
+        </Name>
+        <PhoneNumber>123445557</PhoneNumber>
+        <Date_of_Birth>2003-10-10</Date_of_Birth>
+        <Gender>Male</Gender>
+        <Address> No.10, 11th cross</Address>
+        <BloodGroup>B+</BloodGroup>
+        <Allergies>Peanuts</Allergies>
+    </Patient>
+
 
     <MedicalRecords RecordID="A1001">
         <PatientID>A12</PatientID>
@@ -65,24 +80,44 @@
         <PaymentMethod>Insurance</PaymentMethod>
     </Billing>
 
+    <Billing BillID="A6002">
+        <PatientID>A13</PatientID>
+        <Amount>10000.00</Amount>
+        <PaymentStatus>Paid</PaymentStatus>
+        <DateIssued>2024-08-06</DateIssued>
+        <PaymentMethod>Insurance</PaymentMethod>
+    </Billing>
+
+    
     <InsuranceCompany CompanyID="A123">
         <Name>
             <First_Name>Anson</First_Name>
             <Last_Name>Thomas</Last_Name>
         </Name>
-        <PhoneNumber>123344555</PhoneNumber>
-        <Address>hello</Address>
-        <CoverageTypes>hhhh</CoverageTypes>
-        <PolicyDetails>kkkk</PolicyDetails>
-        <CustomerReview>nice</CustomerReview>  
-        <ClaimsProcessingTime>12</ClaimsProcessingTime>  
+        <PhoneNumber>123445556</PhoneNumber>
+        <Address> No.10, 5th cross</Address>
+        <CoverageTypes>Monthly</CoverageTypes>
+        <PolicyDetails>This is all for all medical emergency</PolicyDetails>
+        <CustomerReview>Nice</CustomerReview>  
+        <ClaimsProcessingTime>24:00:00</ClaimsProcessingTime>  
+    </InsuranceCompany>
 
-
-
+    
+    <InsuranceCompany CompanyID="A124">
+        <Name>
+            <First_Name>Rohan</First_Name>
+            <Last_Name>Gupta</Last_Name>
+        </Name>
+        <PhoneNumber>123445557</PhoneNumber>
+        <Address> No.10, 11th cross</Address>
+        <CoverageTypes>Monthly</CoverageTypes>
+        <PolicyDetails>This is all for all medical emergency</PolicyDetails>
+        <CustomerReview>Nice</CustomerReview>  
+        <ClaimsProcessingTime>24:00:00</ClaimsProcessingTime>  
     </InsuranceCompany>
 
     <Feedback FeedbackID="A8001">
-        <Feedrating>5</Feedrating>
+        <Feedrating>4</Feedrating>
         <Description>Good</Description>
     </Feedback>
 </Hospital>

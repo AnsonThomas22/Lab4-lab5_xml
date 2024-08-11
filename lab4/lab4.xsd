@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <!-- Root element -->
+   
     <xs:element name="Hospital" type="HospitalType"></xs:element>
 
-    <!-- Complex type for Hospital -->
     <xs:complexType name="HospitalType">
         <xs:sequence>
             <xs:element name="Patient" type="PatientType" maxOccurs="unbounded"></xs:element>
@@ -18,7 +17,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <!-- Group for Name and PhoneNumber -->
+    
     <xs:group name="NameAndPhoneGroup">
         <xs:sequence>
             <xs:element name="Name" type="NameType"></xs:element>
@@ -26,7 +25,7 @@
         </xs:sequence>
     </xs:group>
 
-    <!-- Complex type for Name -->
+    
     <xs:complexType name="NameType">
         <xs:sequence>
             <xs:element name="First_Name" type="xs:string"></xs:element>
@@ -34,7 +33,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <!-- Complex type for Patient -->
+   
     <xs:complexType name="PatientType">
         <xs:sequence>
             <xs:group ref="NameAndPhoneGroup"></xs:group>
@@ -47,7 +46,7 @@
         <xs:attribute name="Patient_ID" type="xs:ID" use="required"></xs:attribute>
     </xs:complexType>
 
-    <!-- Complex type for MedicalRecords -->
+
     <xs:complexType name="MedicalRecordsType">
         <xs:sequence>
             <xs:element name="PatientID" type="xs:IDREF"></xs:element>
@@ -60,7 +59,7 @@
         <xs:attribute name="RecordID" type="xs:ID" use="required"></xs:attribute>
     </xs:complexType>
 
-    <!-- Complex type for Nurse -->
+   
     <xs:complexType name="NurseType">
         <xs:sequence>
             <xs:group ref="NameAndPhoneGroup"></xs:group>
@@ -72,7 +71,7 @@
         <xs:attribute name="NurseID" type="xs:ID" use="required"></xs:attribute>
     </xs:complexType>
 
-    <!-- Complex type for Appointment -->
+    
     <xs:complexType name="AppointmentType">
         <xs:sequence>
             <xs:element name="PatientID" type="xs:IDREF"></xs:element>
@@ -86,7 +85,7 @@
         <xs:attribute name="AppointmentID" type="xs:ID" use="required"></xs:attribute>
     </xs:complexType>
 
-    <!-- Complex type for Facility -->
+   
     <xs:complexType name="FacilityType">
         <xs:sequence>
             <xs:element name="NameFa" type="xs:string"></xs:element>
@@ -99,7 +98,7 @@
         <xs:attribute name="FacilityID" type="xs:ID" use="required"></xs:attribute>
     </xs:complexType>
 
-    <!-- Complex type for Billing -->
+  
     <xs:complexType name="BillingType">
         <xs:sequence>
             <xs:element name="PatientID" type="xs:IDREF"></xs:element>
@@ -111,7 +110,7 @@
         <xs:attribute name="BillID" type="xs:ID" use="required"></xs:attribute>
     </xs:complexType>
 
-    <!-- Complex type for InsuranceCompany -->
+  
     <xs:complexType name="InsuranceCompanyType">
         <xs:sequence>
             <xs:group ref="NameAndPhoneGroup"></xs:group>
@@ -119,12 +118,12 @@
             <xs:element name="CoverageTypes" type="xs:string"></xs:element>
             <xs:element name="PolicyDetails" type="xs:string"></xs:element>
             <xs:element name="CustomerReview" type="xs:string"></xs:element>
-            <xs:element name="ClaimsProcessingTime" type="xs:integer"></xs:element>
+            <xs:element name="ClaimsProcessingTime" type="xs:time"></xs:element>
         </xs:sequence>
         <xs:attribute name="CompanyID" type="xs:ID" use="required"></xs:attribute>
     </xs:complexType>
 
-    <!-- Complex type for Feedback -->
+ 
     <xs:complexType name="FeedbackType">
         <xs:sequence>
             <xs:element name="Feedrating" type="FeedratingType"></xs:element>
@@ -133,15 +132,15 @@
         <xs:attribute name="FeedbackID" type="xs:ID" use="required"></xs:attribute>
     </xs:complexType>
 
-    <!-- Simple type for Feedrating -->
+
     <xs:simpleType name="FeedratingType">
-        <xs:restriction base="xs:integer">
-            <xs:enumeration value="1"></xs:enumeration>
-            <xs:enumeration value="2"></xs:enumeration>
-            <xs:enumeration value="3"></xs:enumeration>
-            <xs:enumeration value="4"></xs:enumeration>
-            <xs:enumeration value="5"></xs:enumeration>
-        </xs:restriction>
+    <xs:restriction base="xs:integer">
+        <xs:enumeration value="1"/>
+        <xs:enumeration value="2"/>
+        <xs:enumeration value="3"/>
+        <xs:enumeration value="4"/>
+        <xs:enumeration value="5"/>
+    </xs:restriction>
     </xs:simpleType>
 
     <!-- Simple type for Description -->

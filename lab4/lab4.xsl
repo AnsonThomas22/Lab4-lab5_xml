@@ -2,25 +2,94 @@
 <xsl:stylesheet version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <!-- Root template -->
+
     <xsl:template match="/">
         <html>
             <head>
                 <title>Hospital Data Overview</title>
+                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet"/>
                 <style>
-                    body { font-family: Arial, sans-serif; }
-                    table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
-                    th, td { border: 1px solid black; padding: 8px; text-align: left; }
-                    th { background-color: #f2f2f2; }
-                    h2, h3 { color: #333; }
+                    body { 
+                        font-family: Arial; 
+                        margin: 0;
+                    }
+                    nav {
+                        margin-bottom: 20px;
+                    }
+                    table { 
+                        border-collapse: collapse; 
+                        width: 100%; 
+                        margin-bottom: 20px; 
+                    }
+                    th, td { 
+                        border: 1px solid black; 
+                        padding: 8px; 
+                        text-align: left; 
+                    }
+                    th { 
+                        background-color: #f2f2f2; 
+                        font-size: 1.1em; /* Larger font size for table headers */
+                        text-align: center; /* Center-align table headers */
+                    }
+                    td { 
+                        font-size: 1em; /* Regular font size for table data */
+                    }
+                    h2 {
+                        background-color: #004080; /* Dark blue background */
+                        color: white; 
+                        text-align: center; 
+                        padding: 20px; 
+                        margin: 0; /* Remove default margin */
+                        font-weight: bold; /* Make text bold */
+                    }
+                    h3 {
+                        color: #333;
+                        font-size: 1.2em; /* Larger font size for section headers */
+                        margin-bottom: 10px;
+                    }
+                    footer {
+                        background-color: #004080; /* Dark blue background */
+                        color: white;
+                        text-align: center;
+                        padding: 10px;
+                        margin-top: 20px;
+                    }
+                    .navbar {
+                        background-color: #004080; /* Dark blue background */
+                    }
+                    .navbar a {
+                        color: white;
+                        text-decoration: none;
+                        padding: 8px 12px;
+                    }
+                    .navbar a:hover {
+                        color: #cce5ff; /* Light blue on hover */
+                    }
                 </style>
             </head>
             <body>
-                <h2>Hospital Data Overview</h2>
+                <nav class="navbar">
+                    <div class="container mx-auto flex justify-between items-center">
+                        <div class="text-white text-lg font-bold">
+                            Claire Hospital
+                        </div>
+                        <ul class="flex space-x-4">
+                            <li><a href="lab4.xml" class="text-white hover:text-blue-300">Home</a></li>
+                            <li><a href="map.html" class="text-white hover:text-blue-300">Location</a></li>
+                            <li><a href="#" class="text-white hover:text-blue-300">Services</a></li>
+                            <li><a href="#" class="text-white hover:text-blue-300">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
 
-                <!-- Patients Section -->
+               
+                <h2 class='bg-blue-500 p-4'>Hospital Data Overview</h2>
+            
+
                 <h3>Patients</h3>
                 <table>
+                   
                     <tr>
                         <th>Patient ID</th>
                         <th>First Name</th>
@@ -32,7 +101,9 @@
                         <th>Blood Group</th>
                         <th>Allergies</th>
                     </tr>
-                    <xsl:for-each select="Hospital/Patient">
+
+                    
+                    <xsl:for-each select="Hospital/Patient[@Patient_ID='A12']">
                         <tr>
                             <td><xsl:value-of select="@Patient_ID"/></td>
                             <td><xsl:value-of select="Name/First_Name"/></td>
@@ -45,9 +116,23 @@
                             <td><xsl:value-of select="Allergies"/></td>
                         </tr>
                     </xsl:for-each>
+                    <xsl:for-each select="Hospital/Patient[@Patient_ID='A13']">
+                        <tr>
+                            <td><xsl:value-of select="@Patient_ID"/></td>
+                            <td><xsl:value-of select="Name/First_Name"/></td>
+                            <td><xsl:value-of select="Name/Last_Name"/></td>
+                            <td><xsl:value-of select="PhoneNumber"/></td>
+                            <td><xsl:value-of select="Date_of_Birth"/></td>
+                            <td><xsl:value-of select="Gender"/></td>
+                            <td><xsl:value-of select="Address"/></td>
+                            <td><xsl:value-of select="BloodGroup"/></td>
+                            <td><xsl:value-of select="Allergies"/></td>
+                        </tr>
+                    </xsl:for-each>
+                    
                 </table>
 
-                <!-- Medical Records Section -->
+              
                 <h3>Medical Records</h3>
                 <table>
                     <tr>
@@ -72,7 +157,7 @@
                     </xsl:for-each>
                 </table>
 
-                <!-- Nurses Section -->
+                
                 <h3>Nurses</h3>
                 <table>
                     <tr>
@@ -99,7 +184,7 @@
                     </xsl:for-each>
                 </table>
 
-                <!-- Appointments Section -->
+                
                 <h3>Appointments</h3>
                 <table>
                     <tr>
@@ -126,7 +211,6 @@
                     </xsl:for-each>
                 </table>
 
-                <!-- Facilities Section -->
                 <h3>Facilities</h3>
                 <table>
                     <tr>
@@ -151,7 +235,6 @@
                     </xsl:for-each>
                 </table>
 
-                <!-- Billing Section -->
                 <h3>Billing</h3>
                 <table>
                     <tr>
@@ -174,7 +257,6 @@
                     </xsl:for-each>
                 </table>
 
-                <!-- Insurance Companies Section -->
                 <h3>Insurance Companies</h3>
                 <table>
                     <tr>
@@ -203,23 +285,25 @@
                     </xsl:for-each>
                 </table>
 
-                <!-- Feedback Section -->
+             
                 <h3>Feedback</h3>
                 <table>
                     <tr>
                         <th>Feedback ID</th>
-                        <th>Rating</th>
+                        <th>Feedback Rating</th>
                         <th>Description</th>
                     </tr>
                     <xsl:for-each select="Hospital/Feedback">
                         <tr>
                             <td><xsl:value-of select="@FeedbackID"/></td>
-                            <td><xsl:value-of select="Rating"/></td>
+                            <td><xsl:value-of select="Feedrating"/></td>
                             <td><xsl:value-of select="Description"/></td>
                         </tr>
                     </xsl:for-each>
                 </table>
-
+                <footer>
+                    <p class="foot"> &#169; 2024 Dogs and Cats Restaurant. All rights reserved</p>
+                </footer>
             </body>
         </html>
     </xsl:template>
