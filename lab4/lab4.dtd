@@ -27,10 +27,6 @@
 
 <!ELEMENT Nurse (Name, PhoneNumber, Department, Experience, Shift, Certification)>
 <!ATTLIST Nurse NurseID ID #REQUIRED>
-<!ELEMENT Name (FirstName, LastName)>
-<!ELEMENT FirstName (#PCDATA)>
-<!ELEMENT LastName (#PCDATA)>
-<!ELEMENT PhoneNumber (#PCDATA)>
 <!ELEMENT Department (#PCDATA)>
 <!ELEMENT Experience (#PCDATA)>
 <!ELEMENT Shift (#PCDATA)>
@@ -39,8 +35,6 @@
 
 <!ELEMENT Appointment (PatientID, DoctorID, AppointmentDate, Purpose, Location, Status, FollowUpRequired)>
 <!ATTLIST Appointment AppointmentID ID #REQUIRED>
-<!ELEMENT PatientID (#PCDATA)>
-<!ELEMENT DoctorID (#PCDATA)>
 <!ELEMENT AppointmentDate (#PCDATA)>
 <!ELEMENT Purpose (#PCDATA)>
 <!ELEMENT Location (#PCDATA)>
@@ -48,10 +42,9 @@
 <!ELEMENT FollowUpRequired (#PCDATA)>
 
 
-<!ELEMENT Facility (Name, Location, Capacity, Type, ParkingAvailable, OperatingRooms)>
+<!ELEMENT Facility (NameFa, Location, Capacity, Type, ParkingAvailable, OperatingRooms)>
 <!ATTLIST Facility FacilityID ID #REQUIRED>
-<!ELEMENT Name (#PCDATA)>
-<!ELEMENT Location (#PCDATA)>
+<!ELEMENT NameFa (#PCDATA)>
 <!ELEMENT Capacity (#PCDATA)>
 <!ELEMENT Type (#PCDATA)>
 <!ELEMENT ParkingAvailable (#PCDATA)>
@@ -60,18 +53,14 @@
 
 <!ELEMENT Billing (PatientID, Amount, PaymentStatus, DateIssued, PaymentMethod)>
 <!ATTLIST Billing BillID ID #REQUIRED>
-<!ELEMENT PatientID (#PCDATA)>
 <!ELEMENT Amount (#PCDATA)>
 <!ELEMENT PaymentStatus (#PCDATA)>
 <!ELEMENT DateIssued (#PCDATA)>
 <!ELEMENT PaymentMethod (#PCDATA)>
 
 
-<!ELEMENT InsuranceCompany (Name, Address, PhoneNumber, CoverageTypes, PolicyDetails, CustomerReview, ClaimsProcessingTime)>
+<!ELEMENT InsuranceCompany (Name, PhoneNumber, Address, CoverageTypes, PolicyDetails, CustomerReview, ClaimsProcessingTime)>
 <!ATTLIST InsuranceCompany CompanyID ID #REQUIRED>
-<!ELEMENT Name (#PCDATA)>
-<!ELEMENT Address (#PCDATA)>
-<!ELEMENT PhoneNumber (#PCDATA)>
 <!ELEMENT CoverageTypes (#PCDATA)>
 <!ELEMENT PolicyDetails (#PCDATA)>
 <!ELEMENT CustomerReview (#PCDATA)>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Hospital SYSTEM "lab4.dtd">
 <?xml-model href="lab4.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<?xml-stylesheet type="text/xsl" href="lab4.xsl"?>
 
-<Hospital xmlns="http://www.example.com/schema" xmlns:other="http://www.other.com/schema">
+<Hospital>
     <Patient Patient_ID="A12">
         <Name>
             <First_Name>Anson</First_Name>
@@ -27,8 +28,8 @@
 
     <Nurse NurseID="A301">
         <Name>
-            <FirstName>Jane</FirstName>
-            <LastName>Smith</LastName>
+            <First_Name>Lola</First_Name>
+            <Last_Name>Thomas</Last_Name>
         </Name>
         <PhoneNumber>0987654321</PhoneNumber>
         <Department>Cardiology</Department>
@@ -39,7 +40,7 @@
 
     <Appointment AppointmentID="A4001">
         <PatientID>A12</PatientID>
-        <DoctorID>101</DoctorID>
+        <DoctorID>1011</DoctorID>
         <AppointmentDate>2024-08-05T10:00:00</AppointmentDate>
         <Purpose>Follow-up</Purpose>
         <Location>2nd Floor, Room 201</Location>
@@ -48,7 +49,7 @@
     </Appointment>
 
     <Facility FacilityID="A5001">
-        <Name>Main Hospital</Name>
+        <NameFa>Main Hospital</NameFa>
         <Location>Main Street, Building 3</Location>
         <Capacity>200</Capacity>
         <Type>Hospital</Type>
@@ -64,6 +65,21 @@
         <PaymentMethod>Insurance</PaymentMethod>
     </Billing>
 
+    <InsuranceCompany CompanyID="A123">
+        <Name>
+            <First_Name>Anson</First_Name>
+            <Last_Name>Thomas</Last_Name>
+        </Name>
+        <PhoneNumber>123344555</PhoneNumber>
+        <Address>hello</Address>
+        <CoverageTypes>hhhh</CoverageTypes>
+        <PolicyDetails>kkkk</PolicyDetails>
+        <CustomerReview>nice</CustomerReview>  
+        <ClaimsProcessingTime>12</ClaimsProcessingTime>  
+
+
+
+    </InsuranceCompany>
 
     <Feedback FeedbackID="A8001">
         <Feedrating>5</Feedrating>
