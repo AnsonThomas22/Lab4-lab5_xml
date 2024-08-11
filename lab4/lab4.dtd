@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT Hospital (Patient+, MedicalRecords+, Nurse+, Appointment+, Facility+, Billing+, InsuranceCompany+, Feedback+)>
+
+
+<!ELEMENT Patient (Name, PhoneNumber, Date_of_Birth, Gender, Address, BloodGroup, Allergies)>
+<!ATTLIST Patient Patient_ID ID #REQUIRED>
+<!ELEMENT Name (First_Name, Last_Name)>
+<!ELEMENT First_Name (#PCDATA)>
+<!ELEMENT Last_Name (#PCDATA)>
+<!ELEMENT PhoneNumber (#PCDATA)>
+<!ELEMENT Date_of_Birth (#PCDATA)>
+<!ELEMENT Gender (#PCDATA)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT BloodGroup (#PCDATA)>
+<!ELEMENT Allergies (#PCDATA)>
+
+
+<!ELEMENT MedicalRecords (PatientID, DoctorID, Diagnosis, Treatment, LastVisit, Medications)>
+<!ATTLIST MedicalRecords RecordID ID #REQUIRED>
+<!ELEMENT PatientID (#PCDATA)>
+<!ELEMENT DoctorID (#PCDATA)>
+<!ELEMENT Diagnosis (#PCDATA)>
+<!ELEMENT Treatment (#PCDATA)>
+<!ELEMENT LastVisit (#PCDATA)>
+<!ELEMENT Medications (#PCDATA)>
+
+
+<!ELEMENT Nurse (Name, PhoneNumber, Department, Experience, Shift, Certification)>
+<!ATTLIST Nurse NurseID ID #REQUIRED>
+<!ELEMENT Name (FirstName, LastName)>
+<!ELEMENT FirstName (#PCDATA)>
+<!ELEMENT LastName (#PCDATA)>
+<!ELEMENT PhoneNumber (#PCDATA)>
+<!ELEMENT Department (#PCDATA)>
+<!ELEMENT Experience (#PCDATA)>
+<!ELEMENT Shift (#PCDATA)>
+<!ELEMENT Certification (#PCDATA)>
+
+
+<!ELEMENT Appointment (PatientID, DoctorID, AppointmentDate, Purpose, Location, Status, FollowUpRequired)>
+<!ATTLIST Appointment AppointmentID ID #REQUIRED>
+<!ELEMENT PatientID (#PCDATA)>
+<!ELEMENT DoctorID (#PCDATA)>
+<!ELEMENT AppointmentDate (#PCDATA)>
+<!ELEMENT Purpose (#PCDATA)>
+<!ELEMENT Location (#PCDATA)>
+<!ELEMENT Status (#PCDATA)>
+<!ELEMENT FollowUpRequired (#PCDATA)>
+
+
+<!ELEMENT Facility (Name, Location, Capacity, Type, ParkingAvailable, OperatingRooms)>
+<!ATTLIST Facility FacilityID ID #REQUIRED>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Location (#PCDATA)>
+<!ELEMENT Capacity (#PCDATA)>
+<!ELEMENT Type (#PCDATA)>
+<!ELEMENT ParkingAvailable (#PCDATA)>
+<!ELEMENT OperatingRooms (#PCDATA)>
+
+
+<!ELEMENT Billing (PatientID, Amount, PaymentStatus, DateIssued, PaymentMethod)>
+<!ATTLIST Billing BillID ID #REQUIRED>
+<!ELEMENT PatientID (#PCDATA)>
+<!ELEMENT Amount (#PCDATA)>
+<!ELEMENT PaymentStatus (#PCDATA)>
+<!ELEMENT DateIssued (#PCDATA)>
+<!ELEMENT PaymentMethod (#PCDATA)>
+
+
+<!ELEMENT InsuranceCompany (Name, Address, PhoneNumber, CoverageTypes, PolicyDetails, CustomerReview, ClaimsProcessingTime)>
+<!ATTLIST InsuranceCompany CompanyID ID #REQUIRED>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT PhoneNumber (#PCDATA)>
+<!ELEMENT CoverageTypes (#PCDATA)>
+<!ELEMENT PolicyDetails (#PCDATA)>
+<!ELEMENT CustomerReview (#PCDATA)>
+<!ELEMENT ClaimsProcessingTime (#PCDATA)>
+
+<!ELEMENT Feedback (Feedrating,Description)>
+<!ATTLIST Feedback FeedbackID ID #REQUIRED>
+<!ELEMENT Feedrating (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>

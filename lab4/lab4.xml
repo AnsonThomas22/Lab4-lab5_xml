@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Hospital SYSTEM "lab4.dtd">
+<Hospital>
+    <Patient Patient_ID="12">
+        <Name>
+            <First_Name>Anson</First_Name>
+            <Last_Name>Thomas</Last_Name>
+        </Name>
+        <PhoneNumber>123445556</PhoneNumber>
+        <Date_of_Birth>12/12</Date_of_Birth>
+        <Gender>Male</Gender>
+        <Address> No.10, 5th cross</Address>
+        <BloodGroup>O+</BloodGroup>
+        <Allergies>None</Allergies>
+    </Patient>
+
+    <MedicalRecords RecordID="1001">
+        <PatientID>12</PatientID>
+        <DoctorID>101</DoctorID>
+        <Diagnosis>Coronary Artery Disease</Diagnosis>
+        <Treatment>Bypass Surgery</Treatment>
+        <LastVisit>2024-08-01</LastVisit>
+        <Medications>Aspirin, Beta-blockers</Medications>
+    </MedicalRecords>
+
+    <Nurse NurseID="301">
+        <Name>
+            <FirstName>Jane</FirstName>
+            <LastName>Smith</LastName>
+        </Name>
+        <PhoneNumber>0987654321</PhoneNumber>
+        <Department>Cardiology</Department>
+        <Experience>5</Experience>
+        <Shift>Day</Shift>
+        <Certification>RN, BSN</Certification>
+    </Nurse>
+
+    <Appointment AppointmentID="4001">
+        <PatientID>12</PatientID>
+        <DoctorID>101</DoctorID>
+        <AppointmentDate>2024-08-05T10:00:00</AppointmentDate>
+        <Purpose>Follow-up</Purpose>
+        <Location>2nd Floor, Room 201</Location>
+        <Status>Scheduled</Status>
+        <FollowUpRequired>Yes</FollowUpRequired>
+    </Appointment>
+
+    <Facility FacilityID="5001">
+        <Name>Main Hospital</Name>
+        <Location>Main Street, Building 3</Location>
+        <Capacity>200</Capacity>
+        <Type>Hospital</Type>
+        <ParkingAvailable>Yes</ParkingAvailable>
+        <OperatingRooms>10</OperatingRooms>
+    </Facility>
+
+    <Billing BillID="6001">
+        <PatientID>12</PatientID>
+        <Amount>50000.00</Amount>
+        <PaymentStatus>Pending</PaymentStatus>
+        <DateIssued>2024-08-06</DateIssued>
+        <PaymentMethod>Insurance</PaymentMethod>
+    </Billing>
+
+
+    <Feedback FeedbackID="8001">
+        <Feedrating>5</Feedrating>
+        <Description>Good</Description>
+    </Feedback>
+</Hospital>

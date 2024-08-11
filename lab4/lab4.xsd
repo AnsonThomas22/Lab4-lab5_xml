@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  
+    <xs:element name="Hospital" type="HospitalType"></xs:element>
+
+  
+    <xs:complexType name="HospitalType">
+        <xs:sequence>
+            <xs:element name="Patient" type="PatientType" maxOccurs="unbounded"></xs:element>
+            <xs:element name="MedicalRecords" type="MedicalRecordsType" maxOccurs="unbounded"></xs:element>
+            <xs:element name="Nurse" type="NurseType" maxOccurs="unbounded"></xs:element>
+            <xs:element name="Appointment" type="AppointmentType" maxOccurs="unbounded"></xs:element>
+            <xs:element name="Facility" type="FacilityType" maxOccurs="unbounded"></xs:element>
+            <xs:element name="Billing" type="BillingType" maxOccurs="unbounded"></xs:element>
+            <xs:element name="InsuranceCompany" type="InsuranceCompanyType" maxOccurs="unbounded"></xs:element>
+            <xs:element name="Feedback" type="FeedbackType" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+  
+    <xs:group name="NameAndPhoneGroup">
+        <xs:sequence>
+            <xs:element name="Name" type="NameType"></xs:element>
+            <xs:element name="PhoneNumber" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="NameType">
+        <xs:sequence>
+            <xs:element name="First_Name" type="xs:string"></xs:element>
+            <xs:element name="Last_Name" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+  
+    <xs:complexType name="PatientType">
+        <xs:sequence>
+            <xs:group ref="NameAndPhoneGroup"></xs:group>
+            <xs:element name="Date_of_Birth" type="xs:string"></xs:element>
+            <xs:element name="Gender" type="xs:string"></xs:element>
+            <xs:element name="Address" type="xs:string"></xs:element>
+            <xs:element name="BloodGroup" type="xs:string"></xs:element>
+            <xs:element name="Allergies" type="xs:string"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="Patient_ID" type="xs:ID" use="required"></xs:attribute>
+    </xs:complexType>
+
+
+    <xs:complexType name="MedicalRecordsType">
+        <xs:sequence>
+            <xs:element name="PatientID" type="xs:IDREF"></xs:element>
+            <xs:element name="DoctorID" type="xs:IDREF"></xs:element>
+            <xs:element name="Diagnosis" type="xs:string"></xs:element>
+            <xs:element name="Treatment" type="xs:string"></xs:element>
+            <xs:element name="LastVisit" type="xs:date"></xs:element>
+            <xs:element name="Medications" type="xs:string"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="RecordID" type="xs:ID" use="required"></xs:attribute>
+    </xs:complexType>
+
+
+    <xs:complexType name="NurseType">
+        <xs:sequence>
+            <xs:group ref="NameAndPhoneGroup"></xs:group>
+            <xs:element name="Department" type="xs:string"></xs:element>
+            <xs:element name="Experience" type="xs:integer"></xs:element>
+            <xs:element name="Shift" type="xs:string"></xs:element>
+            <xs:element name="Certification" type="xs:string"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="NurseID" type="xs:ID" use="required"></xs:attribute>
+    </xs:complexType>
+
+
+    <xs:complexType name="AppointmentType">
+        <xs:sequence>
+            <xs:element name="PatientID" type="xs:IDREF"></xs:element>
+            <xs:element name="DoctorID" type="xs:IDREF"></xs:element>
+            <xs:element name="AppointmentDate" type="xs:dateTime"></xs:element>
+            <xs:element name="Purpose" type="xs:string"></xs:element>
+            <xs:element name="Location" type="xs:string"></xs:element>
+            <xs:element name="Status" type="xs:string"></xs:element>
+            <xs:element name="FollowUpRequired" type="xs:string"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="AppointmentID" type="xs:ID" use="required"></xs:attribute>
+    </xs:complexType>
+
+ 
+    <xs:complexType name="FacilityType">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"></xs:element>
+            <xs:element name="Location" type="xs:string"></xs:element>
+            <xs:element name="Capacity" type="xs:integer"></xs:element>
+            <xs:element name="Type" type="xs:string"></xs:element>
+            <xs:element name="ParkingAvailable" type="xs:string"></xs:element>
+            <xs:element name="OperatingRooms" type="xs:integer"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="FacilityID" type="xs:ID" use="required"></xs:attribute>
+    </xs:complexType>
+
+
+    <xs:complexType name="BillingType">
+        <xs:sequence>
+            <xs:element name="PatientID" type="xs:IDREF"></xs:element>
+            <xs:element name="Amount" type="xs:decimal"></xs:element>
+            <xs:element name="PaymentStatus" type="xs:string"></xs:element>
+            <xs:element name="DateIssued" type="xs:date"></xs:element>
+            <xs:element name="PaymentMethod" type="xs:string"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="BillID" type="xs:ID" use="required"></xs:attribute>
+    </xs:complexType>
+
+
+    <xs:complexType name="InsuranceCompanyType">
+        <xs:sequence>
+            <xs:group ref="NameAndPhoneGroup"></xs:group>
+            <xs:element name="Address" type="xs:string"></xs:element>
+            <xs:element name="CoverageTypes" type="xs:string"></xs:element>
+            <xs:element name="PolicyDetails" type="xs:string"></xs:element>
+            <xs:element name="CustomerReview" type="xs:string"></xs:element>
+            <xs:element name="ClaimsProcessingTime" type="xs:integer"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="CompanyID" type="xs:ID" use="required"></xs:attribute>
+    </xs:complexType>
+
+
+    <xs:complexType name="FeedbackType">
+        <xs:sequence>
+            <xs:element name='Feedrating' type="FeedratingType"></xs:element>
+            <xs:element name='Description' type="DescriptionType"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="FeedbackID" type="xs:ID" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <xs:simpleType name="Feedrating">
+    <xs:restriction base="xs:integer">
+        <xs:enumeration value="1"/>
+        <xs:enumeration value="2"/>
+        <xs:enumeration value="3"/>
+        <xs:enumeration value="4"/>
+        <xs:enumeration value="5"/>
+      </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Description">
+    <xs:restriction base="xs:string">
+      </xs:restriction>
+    </xs:simpleType>
+   
+ 
+
+</xs:schema>
