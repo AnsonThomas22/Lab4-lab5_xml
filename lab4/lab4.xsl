@@ -42,11 +42,12 @@
                         padding: 20px; 
                         margin: 0; /* Remove default margin */
                         font-weight: bold; /* Make text bold */
+                        margin-bottom: 30px;
                     }
                     h3 {
                         color: #333;
                         font-size: 1.2em; /* Larger font size for section headers */
-                        margin-bottom: 10px;
+                        margin-bottom: 20px;
                     }
                     footer {
                         background-color: #004080; /* Dark blue background */
@@ -85,9 +86,10 @@
 
                
                 <h2 class='bg-blue-500 p-4'>Hospital Data Overview</h2>
+                <p></p>
             
 
-                <h3>Patients</h3>
+                <h3 class="text-Blue">Patients</h3>
                 <table>
                    
                     <tr>
@@ -133,7 +135,7 @@
                 </table>
 
               
-                <h3>Medical Records</h3>
+                <h3 class="text-Blue">Medical Records</h3>
                 <table>
                     <tr>
                         <th>Record ID</th>
@@ -158,7 +160,7 @@
                 </table>
 
                 
-                <h3>Nurses</h3>
+                <h3 class="text-Blue">Nurses</h3>
                 <table>
                     <tr>
                         <th>Nurse ID</th>
@@ -185,7 +187,7 @@
                 </table>
 
                 
-                <h3>Appointments</h3>
+                <h3 class="text-Blue">Appointments</h3>
                 <table>
                     <tr>
                         <th>Appointment ID</th>
@@ -211,7 +213,7 @@
                     </xsl:for-each>
                 </table>
 
-                <h3>Facilities</h3>
+                <h3 class="text-Blue">Facilities</h3>
                 <table>
                     <tr>
                         <th>Facility ID</th>
@@ -235,7 +237,7 @@
                     </xsl:for-each>
                 </table>
 
-                <h3>Billing</h3>
+                <h3 class="text-Blue">Billing</h3>
                 <table>
                     <tr>
                         <th>Bill ID</th>
@@ -257,7 +259,7 @@
                     </xsl:for-each>
                 </table>
 
-                <h3>Insurance Companies</h3>
+                <h3 class="text-Blue">Insurance Companies</h3>
                 <table>
                     <tr>
                         <th>Company ID</th>
@@ -286,7 +288,7 @@
                 </table>
 
              
-                <h3>Feedback</h3>
+                <h3 class="text-Blue">Feedback</h3>
                 <table>
                     <tr>
                         <th>Feedback ID</th>
@@ -301,8 +303,16 @@
                         </tr>
                     </xsl:for-each>
                 </table>
+
+                <p></p>
+                <h2 class='bg-blue-500 p-4'>Maps</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1943.8462914875736!2d77.60932424712982!3d12.991503729069004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDU5JzI5LjEiTiA3N8KwMzYnNDIuMiJF!5e0!3m2!1sen!2sin!4v1723433449965!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+
                 <footer>
-                    <p class="foot"> &#169; 2024 Dogs and Cats Restaurant. All rights reserved</p>
+                    <p class="foot"> &#169; 2024 Claire Hospital. All rights reserved</p>
                 </footer>
             </body>
         </html>

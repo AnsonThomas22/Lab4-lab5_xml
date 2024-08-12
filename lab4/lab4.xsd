@@ -143,7 +143,6 @@
     </xs:restriction>
     </xs:simpleType>
 
-    <!-- Simple type for Description -->
     <xs:simpleType name="DescriptionType">
         <xs:restriction base="xs:string"></xs:restriction>
     </xs:simpleType>
